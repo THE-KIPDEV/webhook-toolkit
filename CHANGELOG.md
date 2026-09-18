@@ -4,7 +4,15 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
-## [0.1.0] - Unreleased
+## [0.1.1] - 2026-09-18
+
+### Fixed
+- The CLI no longer crashes with `EPIPE` when its output is piped into a command that exits early (`| head`).
+
+### Added
+- Publication to the official MCP Registry (`io.github.THE-KIPDEV/webhook-toolkit`) from GitHub Actions.
+
+## [0.1.0] - 2026-09-18
 
 First public release.
 

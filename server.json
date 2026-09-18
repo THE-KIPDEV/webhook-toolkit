@@ -3,7 +3,7 @@
   "name": "io.github.THE-KIPDEV/webhook-toolkit",
   "title": "Webhook Toolkit",
   "description": "Webhook URLs for AI agents: receive, wait for, replay, sign and verify webhooks (Stripe, GitHub…).",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "websiteUrl": "https://webhook-toolkit.com",
   "repository": {
     "url": "https://github.com/THE-KIPDEV/webhook-toolkit",
@@ -14,7 +14,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "webhook-toolkit",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"

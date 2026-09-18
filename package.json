@@ -1,6 +1,6 @@
 {
   "name": "webhook-toolkit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Receive, inspect, forward, sign and verify webhooks from your terminal, your test suite and your AI agent (CLI + library + MCP server).",
   "type": "module",
   "main": "./dist/index.js",

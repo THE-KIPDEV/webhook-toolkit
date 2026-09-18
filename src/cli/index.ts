@@ -1,6 +1,14 @@
 #!/usr/bin/env node
 import { main } from "./main.js";
 
+// `whtk sign … | head` closes stdout early: that is the reader's choice, not a crash.
+for (const stream of [process.stdout, process.stderr]) {
+  stream.on("error", (err: NodeJS.ErrnoException) => {
+    if (err.code === "EPIPE") process.exit(0);
+    throw err;
+  });
+}
+
 main().then(
   (code) => {
     process.exitCode = code;
