@@ -303,7 +303,7 @@ Requests to the public URL are proxied over a WebSocket to your machine and your
 | History | 7 days | 7 days | 30 days |
 | CLI `listen --forward`, replay, sign, verify, MCP | ✓ | ✓ | ✓ |
 | Relay (real tunnel to localhost) | | | ✓ |
-| AI explanations and generated handlers | | 3 free trials | ✓ |
+| AI explanations and generated handlers | 3 free trials | 3 free trials | ✓ |
 
 Details and the Business plan: [webhook-toolkit.com/pricing](https://webhook-toolkit.com/pricing). Everything that runs locally (signing, verifying, detection, forwarding) is free and stays free.
 
