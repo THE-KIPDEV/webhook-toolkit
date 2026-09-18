@@ -27,3 +27,19 @@ jobs:
       - run: npm test
       - name: Package contents
         run: npm pack --dry-run
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Build the MCP image
+        run: docker build -t webhook-toolkit-mcp .
+      - name: The MCP server answers initialize + tools/list
+        run: |
+          printf '%s\n' \
+            '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"ci","version":"1"}}}' \
+            '{"jsonrpc":"2.0","method":"notifications/initialized"}' \
+            '{"jsonrpc":"2.0","id":2,"method":"tools/list"}' \
+          | timeout 20 docker run -i --rm webhook-toolkit-mcp > out.txt || true
+          cat out.txt
+          grep -q '"create_webhook_url"' out.txt
