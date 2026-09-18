@@ -1,0 +1,11 @@
+name: Feature or provider request
+description: A new command, option or webhook provider
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What do you need?
+      description: For a provider, link its webhook signature documentation and paste a sample request (headers + body, secrets removed).
+    validations:
+      required: true

@@ -1,0 +1,85 @@
+{
+  "name": "webhook-toolkit",
+  "version": "0.1.0",
+  "description": "Receive, inspect, forward, sign and verify webhooks from your terminal, your test suite and your AI agent (CLI + library + MCP server).",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./mcp": {
+      "types": "./dist/mcp/server.d.ts",
+      "default": "./dist/mcp/server.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "webhook-toolkit": "dist/cli/index.js",
+    "whtk": "dist/cli/index.js"
+  },
+  "files": [
+    "dist",
+    "!dist/cli/**/*.d.ts",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "build": "node scripts/clean.mjs dist && tsc -p tsconfig.json && node scripts/postbuild.mjs",
+    "typecheck": "tsc -p tsconfig.test.json --noEmit",
+    "pretest": "node scripts/clean.mjs .test-dist && tsc -p tsconfig.test.json",
+    "test": "node scripts/run-tests.mjs",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "ws": "^8.18.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "@types/ws": "^8.18.1",
+    "typescript": "^6.0.3"
+  },
+  "keywords": [
+    "webhook",
+    "webhooks",
+    "webhook-tester",
+    "webhook-testing",
+    "webhook-relay",
+    "webhook-forwarding",
+    "smee",
+    "ngrok",
+    "localhost",
+    "tunnel",
+    "stripe-webhook",
+    "github-webhook",
+    "shopify-webhook",
+    "slack",
+    "twilio",
+    "svix",
+    "signature",
+    "hmac",
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "cli",
+    "testing"
+  ],
+  "author": "Kipdev",
+  "license": "MIT",
+  "homepage": "https://webhook-toolkit.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/THE-KIPDEV/webhook-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/THE-KIPDEV/webhook-toolkit/issues"
+  },
+  "mcpName": "io.github.THE-KIPDEV/webhook-toolkit"
+}

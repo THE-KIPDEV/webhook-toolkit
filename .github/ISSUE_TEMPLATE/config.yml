@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Hosted service, billing and account questions
+    url: https://webhook-toolkit.com
+    about: Questions about webhook-toolkit.com plans, the dashboard or the web inspector.

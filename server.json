@@ -1,0 +1,54 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.THE-KIPDEV/webhook-toolkit",
+  "title": "Webhook Toolkit",
+  "description": "Webhook URLs for AI agents: receive, wait for, replay, sign and verify webhooks (Stripe, GitHub…).",
+  "version": "0.1.0",
+  "websiteUrl": "https://webhook-toolkit.com",
+  "repository": {
+    "url": "https://github.com/THE-KIPDEV/webhook-toolkit",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "webhook-toolkit",
+      "version": "0.1.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "environmentVariables": [
+        {
+          "name": "WEBHOOK_TOOLKIT_KEY",
+          "description": "Optional webhook-toolkit.com API key (whk_…): permanent URLs, listing URLs, AI explanations.",
+          "isRequired": false,
+          "isSecret": true,
+          "placeholder": "whk_…"
+        }
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://webhook-toolkit.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Optional: Bearer <webhook-toolkit.com API key>",
+          "isRequired": false,
+          "isSecret": true,
+          "placeholder": "Bearer whk_…"
+        }
+      ]
+    }
+  ]
+}

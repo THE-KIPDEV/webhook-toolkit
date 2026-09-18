@@ -1,0 +1,24 @@
+name: Bug report
+description: Something does not work as documented
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: The command or code you ran, what you expected, and what you got.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output
+      description: Terminal output (run with DEBUG=1 for a stack trace). Remove secrets and API keys.
+      render: text
+  - type: input
+    id: version
+    attributes:
+      label: Versions
+      placeholder: "webhook-toolkit 0.1.0, Node 22.12, macOS 15"
+    validations:
+      required: true
